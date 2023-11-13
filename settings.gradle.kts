@@ -11,8 +11,16 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        create("testLibs") {
+            from(files("gradle/testLibs.versions.toml"))
+        }
+        create("coreLibs") {
+            from(files("gradle/coreLibs.versions.toml"))
+        }
+    }
 }
 
 rootProject.name = "yamcore"
 include(":app")
- 
+include(":core")
